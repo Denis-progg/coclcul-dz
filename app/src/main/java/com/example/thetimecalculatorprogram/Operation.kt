@@ -1,6 +1,6 @@
 package com.example.thetimecalculatorprogram
 
-class Operation(var stringOne: String, var stringTwo: String) {
+class Operation( stringOne: String,  stringTwo: String) {
     var strIndexH = stringOne.indexOf("h")
     var stringStrH = stringOne.substring(0, strIndexH).trim()
     var strIntH = stringStrH.toString().toInt()
@@ -37,10 +37,17 @@ class Operation(var stringOne: String, var stringTwo: String) {
     var resStringSTwo = secHTwo + secMTwo + secTwo
 
     fun sum(): String {
-        var resvrem = resStringS + resStringSTwo//45678
-        val hours = resvrem / 3600
-        val minutes = (resvrem % 3600) / 60
-        val seconds = resvrem % 60
+        var totalSec = resStringS + resStringSTwo//45678
+        val hours = totalSec / 3600
+        val minutes = (totalSec % 3600) / 60
+        val seconds = totalSec % 60
+        return "$hours h $minutes m $seconds s"
+    }
+    fun div(): String{
+        var totalS= resStringS - resStringSTwo
+        val hours = totalS / 3600
+        val minutes = (totalS % 3600) / 60
+        val seconds = totalS % 60
         return "$hours h $minutes m $seconds s"
     }
 

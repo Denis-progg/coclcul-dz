@@ -10,8 +10,8 @@ import android.widget.TextView
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-    private lateinit var enter_timeOne: EditText
-    private lateinit var enter_timeTwo: EditText
+    private lateinit var enterTimeOne: EditText
+    private lateinit var enterTimeTwo: EditText
     private lateinit var buttonDifBTN: Button
     private lateinit var buttonPlusBTN: Button
     private lateinit var resultTV: TextView
@@ -21,22 +21,25 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        enter_timeOne = findViewById(R.id.input_timeOne)
-        enter_timeTwo = findViewById(R.id.input_timeTwo)
+        enterTimeOne = findViewById(R.id.input_timeOne)
+        enterTimeTwo = findViewById(R.id.input_timeTwo)
         buttonDifBTN = findViewById(R.id.buttonDifBTN)
         buttonPlusBTN = findViewById(R.id.buttonPlusBTN)
         resultTV = findViewById(R.id.resultTE)
 
-        enter_timeOne.setOnClickListener(this)
+        enterTimeOne.setOnClickListener(this)
+        enterTimeTwo.setOnClickListener(this)
+
 
     }
 
 
     override fun onClick(v: View) {
-        var enter_timeOne = enter_timeOne.text.toString()
-        var enter_timaTwo = enter_timeTwo.text.toString()
+        var enterTimeOne = enterTimeOne.text.toString()
+        var enterTimeTwo = enterTimeTwo.text.toString()
         var result = when (v.id) {
-            R.id.buttonPlusBTN -> Operation(enter_timeOne, enter_timaTwo).sum()
+            R.id.buttonPlusBTN -> Operation(enterTimeOne, enterTimeTwo).sum()
+            R.id.buttonDifBTN -> Operation(enterTimeOne,enterTimeTwo).div()
             else -> 0
         }
         resultTV.text = result.toString()
