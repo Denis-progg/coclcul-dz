@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">The time calculator program</string>
+    <string name="calc_text">Калькулятор времени</string>
+    <string name="operation_div">-</string>
+    <string name="operation_plus">+</string>
+    <string name="result">Результат</string>
+</resources>
