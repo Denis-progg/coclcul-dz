@@ -1,5 +1,6 @@
 package com.example.thetimecalculatorprogram
 
+import android.media.VolumeShaper
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         var enterTimeTwo = enterTimeTwo.text.toString()
         var result = when (v.id) {
             R.id.buttonPlusBTN -> Operation(enterTimeOne, enterTimeTwo).sum()
-            R.id.buttonDifBTN -> Operation(enterTimeOne,enterTimeTwo).div()
+            R.id.buttonDifBTN -> Operation(enterTimeOne, enterTimeTwo).div()
             else -> 0
         }
         resultTV.text = result.toString()
